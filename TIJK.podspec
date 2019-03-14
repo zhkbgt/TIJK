@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TIJK'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TIJK.'
+  s.summary          = 'a TIJK.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,13 +28,18 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/zhkbgt/TIJK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'TIJK/Classes/**/*'
+  #s.source_files = 'TIJK/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TIJK' => ['TIJK/Assets/*.png']
   # }
+  
+  s.vendored_frameworks = 'IJKMediaFramework.framework'
+  s.libraries = 'icucore', 'c++', 'bsm', 'z', 'bz2', 'resolv'
+  s.frameworks = 'UIKit', 'MapKit', 'WebKit'
+
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
